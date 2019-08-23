@@ -1,6 +1,4 @@
-
-
-<%= simple_form_for[@restaurant,@review] do |f| %>
+<%= simple_form_for(@restaurant) do |f| %>
   <% if @restaurant.errors.any? %>
     <div class="errors-container">
       <ul>
@@ -10,9 +8,6 @@
       </ul>
     </div>
   <% end %>
-
-
-
 <div class="form-group">
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -35,3 +30,20 @@
 
   <%= f.submit %>
   <% end %>
+ <!-- wagon solution -->
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Create a new restaurant</h1>
+      <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :phone_number %>
+        <%= f.input :category %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
