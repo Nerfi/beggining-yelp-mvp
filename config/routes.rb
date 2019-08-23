@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'restaurants/index'
-  resources :restaurants, only: [:index ]
+  resources :restaurants, only: [:index ,:show, :new, :create] do
+
+    resources :revieews, only: [:new, :create]
+  end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
